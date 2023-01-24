@@ -29,57 +29,24 @@
  
 ## Запуск тестов
 
-### Локальный запуск тестов
-
-#### Локальный запуск тестов с использованием параметров из property файла test
-
+Запустить тесты через терминал можно с помощью команды:
 ```
 gradle clean test
 ```
 
-#### Описание параметров для запуска тестов
+#### Имеются следующие ключи для запуска тестов
 
-> -DbrowserName <code>название браузера</code>
+> -DselenoidUrl <code>адрес удаленного сервера</code>
+> 
+> -DbrowserSize <code>разрешение запускаемого браузера</code>
+>
+> -Dbrowser <code>название браузера</code>
 > 
 > -DbrowserVersion <code>версия браузера</code>
->
-> -DbaseUrl <code>url стенда фронта</code>
-> 
-> -DbrowserSize <code>разрешение браузера</code>
-> 
-> -DpageLoadTimeout <code>таймоут загрузки страницы</code>
-> 
-> -Dtimeout <code>таймаут ожидания загрузки элемента страницы</code>
-> 
-> -Dheadless <code>запуск браузера в обычном или headless режиме</code>
-> 
-> -DisRemote <code>запуск тестов локально или через remote сервис</code>
-> 
-> -DremoteUrl <code>url remote сервиса</code>
-### Удаленный запуск тестов
 
-#### Удалённый запуск через передачу параметров
-
-<code>gradle clean test -DisRemote=true -DremoteUrl={url}</code>
-
-#### Удалённый запуск через заранее подготовленный property файл
-
-> Создаём property файл с необходимыми параметрами и кладём его в <code>test.resources</code>
->
-> Запускаем тесты, используя созданный property файл 
-> 
-> <code>gradle clean test -Denv={имя файла}</code>
-##### Пример файла
+##### Пример команды для запуска тестов (значения в примере являются значениями по умолчанию, поэтому именно эти значения можно не указывать в команде)
 ```
-browserName=chrome
-browserVersion=108
-baseUrl=https://www.google.com
-browserSize=1920x1080
-pageLoadTimeout=10000
-timeout=10000
-headless=false
-isRemote=true
-remoteUrl=https://selenoid.autotests.cloud
+./gradlew clean test "-DselenoidUrl=https://user1:1234@selenoid.autotests.cloud" "-DbrowserSize=1920x1080" "-Dbrowser=chrome"  "-DbrowserVersion=100.0" 
 ```
 
 ## <img width="4%" title="Jenkins" src="readme_design/logo/Jenkins.svg"> Удаленный запуск тестов в Jenkins
@@ -89,36 +56,33 @@ remoteUrl=https://selenoid.autotests.cloud
 <img title="Jenkins" src="readme_design/screens/Jenkins.png">
 </p>
 
-## <img width="4%" title="Allure_Report" src="readme_design/logo/Allure_Report.svg"> Главная страница allure отчета
-
-<p align="center">
-<img title="Allure_main" src="readme_design/screens/Allure_main.png">
-</p>
-
-### <img width="4%" title="Allure_Report" src="readme_design/logo/Allure_Report.svg"> Группировка тестов по проверяемому функционалу
+### <img width="4%" title="Allure_Report" src="readme_design/logo/Allure_Report.svg"> Allure-отчет по проведенным тестам
+В отчете можно увидеть каие из тестов упали, а какие прошли успешно. Так сохраняются скрин последнего шага, исходный код страницы, логи консоли браузера, а так же видео проведенного тестирования.
 
 <p align="center">
 <img title="Allure_suits" src="readme_design/screens/Allure_suits.png">
 </p>
 
-### <img width="4%" title="Allure_Report" src="readme_design/logo/Allure_Report.svg"> Основной дашборд
+## <img width="4%" title="Selenoid" src="readme_design/logo/Selenoid.svg"> Видео проводимого теста
+
+> К каждому тесту в отчете прилагается видео. Одно из таких видео представлено ниже.
+<p align="center">
+<img title="Selenoid_gif" src="readme_design/gifs/Selenoid.gif">
+</p>
+
+### <img width="4%" title="Allure_Report" src="readme_design/logo/Allure_Report.svg"> Статистика и состояние проводимых тестов
 
 <p align="center">
 <img title="Allure_dashboard" src="readme_design/screens/Allure_dashboard.png">
 </p>
 
-## <img width="4%" title="Telegram" src="readme_design/logo/Telegram.svg"> Уведомления в Telegram с использованием бота
+## <img width="4%" title="Telegram" src="readme_design/logo/Telegram.svg"> Отправка уведомления в Telegram с использованием бота
 
-> После завершения сборки специальный бот, созданный в <code>Telegram</code>, автоматически обрабатывает и отправляет сообщение с отчетом о прогоне.
+> После завершения тестирования специальный бот, созданный в <code>Telegram</code>, автоматически обрабатывает и отправляет сообщение с отчетом о тестировании.
 > 
 > Информация по настройке и использованию бота <code>https://github.com/qa-guru/allure-notifications</code>
 <p align="center">
 <img title="Telegram_notifications" src="readme_design/screens/Telegram_notifications.png">
 </p>
 
-## <img width="4%" title="Selenoid" src="readme_design/logo/Selenoid.svg"> Пример запуска теста в Selenoid
 
-> К каждому тесту в отчете прилагается видео. Одно из таких видео представлено ниже.
-<p align="center">
-<img title="Selenoid_gif" src="readme_design/gifs/Selenoid.gif">
-</p>
