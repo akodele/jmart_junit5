@@ -61,7 +61,7 @@ public class CityProductsStoreTest extends TestBase {
     }
 
     @CsvFileSource(resources = "/cities.csv",delimiter = ';')
-    @ParameterizedTest(name = "Проверка отображения выбранного города {0} на главной странице маркетплейса JMart")
+    @ParameterizedTest(name = "Проверка отображения выбранного города на главной странице маркетплейса JMart")
 
     public void selectedCityOnMainPageTest(String city) {
         open("/");
