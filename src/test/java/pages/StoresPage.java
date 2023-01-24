@@ -12,10 +12,10 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class StoresPage {
     SelenideElement
-            cityOfStores=$x("//span[@class='sc-kDTinF kPWtmW']");
+            cityOfStores=$x("//div[@class='sc-kDTinF fNpZc']");
 
     ElementsCollection
-            storeNameElements=$$x("//h2[@class='sc-kDTinF hlekWu']");
+            storeNameElements=$$x("//h2[@class='sc-kDTinF dxwvzv']");
 
     public StoresPage checkSelectedCity(String city){
         cityOfStores.shouldHave(text(city));

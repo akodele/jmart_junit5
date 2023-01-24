@@ -27,21 +27,22 @@ public class CityProductsStoreTest extends TestBase {
 
     }
 
+
     static Stream<Arguments> storesOfCityTest() {
         return Stream.of(
-                Arguments.of("Алматы", List.of("A-Store", "Bahcha", "Carefood",
-                                            "Cадыхан", "Flamingo", "Moonyalmaty",
-                                            "Mясной Boszhan", "Oвощной", "Riza Herb",
-                                            "Small", "Tvoy.kz", "Zоомагазин ZOOKORM",
-                                            "Zоомагазин Zoo KING", "Zоомагазин Котопёс", "АLCOMARKET",
-                                            "Аптека SMART", "Ароматный мир", "Бады Alhadaya",
-                                            "Бады DoroMarine", "Дәмді ет", "Еlitalco",
-                                            "Кондитерская Caramel", "Кофе Accio Store", "Мfood.kz",
-                                            "Мy Mart", "Магазин XO", "Продукция Цесна",
-                                            "Шымбулак Water")),
-                Arguments.of("Астана", List.of("Aстыкжан", "JIDEK.KZ", "KazZooMir",
-                                            "Mясная лавка №1", "Tvoy.kz (Астана)",
-                                            "Кофе Accio Store"))
+                Arguments.of("Алматы", List.of("A-Store", "Carefood", "Small",
+                        "Садыхан", "Europharma", "Flamingo",
+                        "Овощной", "Mясной Boszhan","Дәмді ет", "Riza Herb",
+                        "Tvoy.kz", "Зоомагазин ZOOKORM",
+                        "Зоомагазин Zoo KING", "Зоомагазин Котопёс", "Epicure",
+                        "Moonyalmaty", "ALCOMARKET", "Аптека SMART",
+                        "Ароматный мир", "Бады Alhadaya", "Бады DoroMarine",
+                        "Elitalco", "Кондитерская Caramel", "Mfood.kz",
+                        "My Mart", "Шымбулак Water", "Продукция Цесна",
+                        "Магазин XO","Accio Store")),
+                Arguments.of("Астана", List.of("Астыкжан", "INTERFOOD ASTANA", "JIDEK.KZ",
+                        "Зоомагазин KazZooMir", "Europharma",
+                        "Мясная лавка №1","Tvoy.kz (Астана)","Accio Store"))
         );
     }
 

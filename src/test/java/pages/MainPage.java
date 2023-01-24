@@ -16,7 +16,7 @@ public class MainPage {
             selectedCity=$x("//div[@class='sc-kDTinF fNpZc']");
 
     ElementsCollection
-            mainMenus = $$x(".//div[@class='sc-gKclnd kksjtN']//a");
+            mainMenus = $$x(".//div[@class='sc-gKclnd sc-iqseJM eAsfZL gHYMmw sc-cabOPr JiVmU']//a");
 
     public MainPage mainMenusSelectThird() {
         mainMenus.get(2).click();
