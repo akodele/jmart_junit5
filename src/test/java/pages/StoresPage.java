@@ -3,6 +3,7 @@ package pages;
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import java.util.List;
 
@@ -17,11 +18,13 @@ public class StoresPage {
     ElementsCollection
             storeNameElements=$$x("//h2[@class='sc-kDTinF dxwvzv']");
 
+    @Step("Проверяем смену на выбранный город на странице \"Продукты\"")
     public StoresPage checkSelectedCity(String city){
         cityOfStores.shouldHave(text(city));
         return this;
     }
 
+    @Step("Проверяем отображение продуктовых магазинов")
     public void checkStoresNames(List<String> storeNames){
         storeNameElements.shouldHave(CollectionCondition.texts(storeNames));
     }
